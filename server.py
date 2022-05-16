@@ -1,11 +1,11 @@
 from sanic import Sanic
 from sanic.response import text
-from sanic import response
+
 from sanic_jinja2 import SanicJinja2
 import os
 
-app = Sanic("WovenCertVerificationApp")
-jinja = SanicJinja2(app, pkg_name="main")
+app = Sanic(__name__)
+jinja = SanicJinja2(app)
 
 VALID_IDS = {
     "asdfghjkl54321": {
