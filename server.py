@@ -44,7 +44,7 @@ async def hello_world(request, cert_id: str):
     except KeyError:
         certificate = None
 
-    return jinja.render("index.html", request, context=certificate)
+    return jinja.render("cert_poc.html", request, context=certificate)
 
 
 app.run(host="0.0.0.0", port=os.environ["PORT"], debug=True, access_log=False)
