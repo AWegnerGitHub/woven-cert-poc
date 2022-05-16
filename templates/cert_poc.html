@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate for {{ context.name }}</title>
+</head>
+
+<body>
+
+    {% if context.name is defined %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>{{ context.name }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Qualification</td>
+                <td>{{ context.certificate_name }}</td>
+            </tr>
+            <tr>
+                <td>Issue Date</td>
+                <td>{{ context.issue_date }}</td>
+            </tr>
+            <tr>
+                <td>Expire Date</td>
+                <td>{{ context.expire_date }}</td>
+            </tr>
+            <tr>
+                <td>Is Expired?</td>
+                <td>{{ context.expired }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <b>Unknown Certificate ID</b>
+    {% endif %}
+</body>
+
+</html>
